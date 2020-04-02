@@ -20,10 +20,11 @@ Cursos para un programador Java Developer
 
 14) JavaScript
 15) NodeJS
-16)Angular
+16) Angular
+
 
 17) Uso del Postman
-18)Spring Tools
-19)Visual Studio Code
-20)Zoom
+18) Spring Tools
+19) Visual Studio Code
+20) Zoom
 
