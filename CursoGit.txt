@@ -1,0 +1,84 @@
+Git
+Para saber la versión en la que estamos trabajando: 
+Git --versión
+Para poder configuración del nombre y correo de la persona que usara git:
+Git config --global user.name “WalterAbregu” 
+Git config --global user.email abreguwalter0709@gmail.com
+Si quieres saber cuál es el nombre y correo asociado al git de la maquina:
+Git config --global -l
+Nota: Puedes sobre escribir el nombre y correo del git inicial de la máquina para poder trabajarlo con el tuyo.
+Como indicarle a git que quieres crear un repositorio en una carpeta:
+Git init
+Para conocer el estado actual de la carpeta que quieres que sea tu repositorio:
+Git status
+Para agregar los archivos dentro del repositorio:
+Git add .
+Para poder tener nuestros archivos en una zona intermediaria antes de llegar a nuestro repositorio:
+Git commit --m “El mensaje referencia a lo que estas realizando”
+Cuando tenemos un cambio en algún archivo y no estamos seguros de cual es o alguien externo a tu persona lo ha cambiado puedes ver el cambio en los archivos con:
+Git diff
+Si queremos revertir a como estaban los archivos antes de los últimos cambios:
+Git checkout .
+ Si solo quiero llevar el control de un archivo en específico dentro del repositorio:
+Git add [nombre del archivo]  seguido de un commit para tener el cambio.
+Si solo quieres referenciar una carpeta de las que tienes en el repositorio:
+Git add [ruta/archivo.extension] y solo se agregarían los cambios hechos en esa carpeta
+Si solo quieres agregar archivos con una extensión en específico:
+Git add [ruta/*.extension]
+Si solo quieres que se agregue todo excepto un archivo en específico:
+Git reset  [ruta/*.extension]
+Y para agregar todos los cambios:
+Git add --all
+Para poder ver un histórico de los commit:
+Git log y para terminar de ver con “q”
+Nota: Si te olvidas de alguna línea de comando puedes poder “git help” para ver la descripción de cada comando.
+Como generar alias en git:
+Git config --global alias.l “log” le estamos diciendo que cuando pongamos git l podemos saber cómo sacar los log de una forma más abreviada.
+Qué hacer cuando queremos cambiar el commit que hemos guardado para nuestro repositorio:
+Git commit --amend --m “Nuevo mensaje corregido” y con git log puedes ver la modificación.
+Si agregaste un archivo y te diste cuenta que no era con el nombre que lo querías tener, para que git tenga un histórico de cual fue ese archivo puedes usar:
+Git mv [nombreArchivo.extension] [nuevoNombreArchivo.extension]
+Y si le hacemos un git status veras como se ve el cambio en la consola de git
+Si quieres eliminar un archivo desde git:
+Git rm [nombreArchivo.extension]
+Si deseas volver a un commit anterior por un archivo que necesitabas antes:
+Git reset --hard [nombre del commit]
+Si solo quieres volver al commit  y no ver afectado los archivos del repositorio:
+Git reset --soft [nombre del commit] y si vez con un git log ya no veras los commit después el que usaste.
+Si quieres ver un histórico así hayas hecho el git reset hard o soft puedes usar:
+Git reflog
+Para ir a un punto o commit específico sin afectar los últimos cambios:
+Git reset --mixed [nombre de commit]
+No siempre es bueno llevar el control de todos los archivos del proyecto para eso en git puedes usar:
+Creas un archivo con extension [.gitignore]
+Nota: Dentro del archivo puedes escribir el nombre del archivo que quieres que el git ignore como ide-config* y todos los que tengan esa palabra y algo después de serán ignorados y si quieres una carpeta / [nombreCarpeta]/.
+URL de ejemplos de Git Ignore por lenguaje: https://github.com/github/gitignore
+Si quieres tener una nueva rama para tu proyecto:
+Git branch [nombre de la rama]
+Y si queremos ver la creación de la nueva rama:
+Git log –oneline –decorate –all --graph
+Si queremos volver a donde estábamos como rama:
+Git checkout [nombre de la rama a la cual queremos ir]
+Si queremos fusionar la rama creada a la rama principal:
+Git merge [rama a la cual queremos hacer la unión]
+Y para eliminar una rama ya creada:
+Git branch –d [nombre de la rama a eliminar]
+Si queremos crear una rama pero que después de poner el código estemos en la rama creada:
+Git checkout -b [nombre de rama]
+Nota: Cuando salen conflictos por un merge entre una rama y la rama master, lo único que puedes hacer es ver los conflictos que salen en la consola de git y poder ver cómo quieres manualmente que quede el archivo que tiene el conflicto.
+ 
+Cuando quieres usar temas de versión en un proyecto puedes usar como referencia:
+V1.2.3 = V es la versión, 1 es un cambio estable e importante ,2 un cambio mediano pero moderado ,3 un cambio pequeño o mínimo.
+Y así puedes llevar un mejor control de los proyectos cuando ya son grandes e implican desarrollo.
+Cuando quieras establecer etiquetas en los commit que consideres importantes en tu proyecto:
+Git tag -a v1.0.0 -m “nombre del commit”
+Si quieres eliminar la etiqueta:
+Git tag -d [nombre de la etiqueta] 
+Cuando tienes un commit anterior que crees importante tener que darle una etiqueta:
+Git tag -a v0.0.1 [número del commit] -m “nombre del comit”
+
+Como mandar un repositorio de local a GitHub:
+Creas un repositorio nuevo y te saldrán los pasos que se pueden seguir.
+
+Cuando queremos bajar los cambio y tener actualizado el repositorio:
+Git pull
